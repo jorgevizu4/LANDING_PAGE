@@ -4,7 +4,7 @@
 // ====================================================================
 
 // **¡IMPORTANTE!** Reemplaza esta dirección con tu correo electrónico
-$destinatario = "tu-correo@ejemplo.com"; 
+$destinatario = "jorge.vizuete.mendez@gmail.com"; 
 
 $asunto_base = "Nuevo Mensaje de Contacto desde tu Web"; 
 $cabeceras = 'MIME-Version: 1.0' . "\r\n";
