@@ -1,0 +1,130 @@
+/*COLOUR PALLETE*/
+:root{
+    /* CSS HEX */
+    --jet-black: #022b3aff;
+    --teal: #1f7a8cff;
+    --pale-sky: #bfdbf7ff;
+    --lavender: #e1e5f2ff;
+    --white: #ffffffff;
+}
+
+/* General Styles */
+* {
+    font-family: 'Poppins', sans-serif;
+}
+body {
+    background-color: var(--lavender);
+}
+/* NavBar */
+.navbar-toggler {
+    filter: invert(100%);
+}
+.navbar {
+    background-color: var(--jet-black);
+}
+.nav-item .nav-link {
+    color: var(--white);
+    padding-right: 20px;
+} 
+.nav-item {
+    margin-left: 30px;
+}  
+#span {
+    color: var(--white);
+}
+.icons:hover {
+    transform: scale(1.2);
+    transition: transform 0.3s;
+}
+.nav-link {
+    /* Es fundamental para que el pseudo-elemento ::after se posicione correctamente */
+    position: relative; 
+    text-decoration: none; /* Quitamos el subrayado por defecto del enlace */
+    color: var(--white);
+    font-size: 18px;
+    padding: 5px 0; /* Espacio para que el subrayado no toque el texto */
+    transition: color 0.3s ease; /* Transición para el color del texto */
+}
+.nav-link::after {
+    content: ''; /* Obligatorio para pseudo-elementos */
+    position: absolute;
+    bottom: 0; /* Lo coloca justo debajo del texto */
+    left: 0;
+    width: 100%;
+    height: 2px; /* Grosor del subrayado */
+    background-color: var(--white); /* Color del subrayado */
+    
+    /* Configuración inicial: el subrayado está oculto */
+    transform: scaleX(0); 
+    
+    /* El punto de origen de la expansión es el centro (para que se expanda hacia los lados) */
+    transform-origin: bottom center; 
+    
+    /* Transición suave para la expansión */
+    transition: transform 0.3s ease-out;
+}
+
+/* 3. El Efecto HOVER */
+.nav-link:hover::after {
+    /* Al hacer hover, cambiamos la escala a 1 (100% de su ancho original) */
+    transform: scaleX(1); 
+}
+/* Main */
+.main {
+    text-align: left;
+    background-color: var(--teal);
+    color: var(--white);
+    border-radius: 10px;
+    padding: 20px;
+}
+.card {
+    margin: 10px;
+}
+.container {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+/*Curriculum*/
+.container-cv {
+    padding-top: 18px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--white);
+}
+.container-cv:last-child {
+    border-bottom: 0;
+    padding-bottom: 0px;
+}
+
+/*Proyectos*/
+.proyectos {
+    text-align: left;
+    background-color: var(--teal);
+    color: var(--white);
+    border-radius: 10px;
+    padding: 20px;
+}
+.proyectos h1 {
+    margin-bottom: 20px;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s;
+}
+
+/*Contacto*/
+.col {
+    color: var(--white);
+}
+
+/*Footer*/
+.footer {
+    background-color: var(--jet-black);
+    padding: 20px;
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        display: flex;
+    }
+}
