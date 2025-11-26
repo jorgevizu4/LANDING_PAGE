@@ -92,6 +92,7 @@ body {
 #offcanvas-closer {
     filter: invert(100%);
 }
+
 /* Main */
 .main {
     text-align: left;
