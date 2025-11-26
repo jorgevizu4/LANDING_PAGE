@@ -16,7 +16,7 @@
 <body>
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" id="offcanvas-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -54,6 +54,34 @@
             </div>
         </div>
     </nav>
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebarMenu" aria-labelledby="sidebarMenuLabel">
+        <div class="offcanvas-header">
+            <h3 class="offcanvas-title" id="sidebarMenuLabel">Menú</h3>
+            <button type="button" class="btn-close" id="offcanvas-closer" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="navbar-nav flex-grow-1 pe-3">
+                <li class="nav-item">
+                    <a class="nav-link"  aria-current="page" href="#">Sobre mí</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="curriculum.html">CV</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="proyectos.html">Proyectos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contacto.html">Contacto</a>
+                </li>
+            </ul>
+            <div class="mt-4">
+                <h6 id="offcanvas-sigueme">Redes sociales</h6>
+                <a href="mailto:jorge.vizuete.mendez@gmail.com"><img class="icons me-2" src="img/icons8-email-48.png" alt="Email"></a>
+                <a href="https://www.linkedin.com/in/jorge-vizuete-mendez-a41ba018b"><img class="icons me-2" src="img/icons-linkedin-48.png" alt="LinkedIn"></a>
+                <a href="https://github.com/jorgevizu4"><img class="icons" src="img/icons8-github-48.png" alt="GitHub"></a>
+            </div>
+        </div>
+    </div>
     <div class="container mt-4 main" id="main">
         <h1>Sobre mí</h1>
         <p>¡Hola! Soy Jorge Vizuete Méndez, estudiante del Grado Superior de Desarrollo de Aplicaciones Multiplataforma.</p>
@@ -75,5 +103,45 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-HwwvtgBNo3bZJJLYd8o9W6gkP6r5VtJ6V3b2l4gHf8hK5j0hZ5V7mXr2N5t9u5K"
     crossorigin="anonymous"></script>
+
+<script>
+    const offcanvasElement = document.getElementById('sidebarMenu');
+    const togglerButton = document.getElementById('offcanvas-toggler');
+    const closerButton = document.getElementById('offcanvas-closer');
+    const body = document.body;
+
+    // 2. Función para alternar el estado del Offcanvas
+    function toggleOffcanvas() {
+        // Alternar la clase .show en el Offcanvas
+        offcanvasElement.classList.toggle('show');
+
+        // Alternar el backdrop y el scroll de la página (comportamiento estándar de Bootstrap)
+        if (offcanvasElement.classList.contains('show')) {
+            // Añadir el backdrop (overlay)
+            const backdrop = document.createElement('div');
+            backdrop.className = 'offcanvas-backdrop fade show';
+            backdrop.id = 'offcanvas-backdrop';
+            body.appendChild(backdrop);
+            
+            // Bloquear el scroll del body
+            body.style.overflow = 'hidden';
+
+            // Cerrar el offcanvas al hacer clic en el backdrop
+            backdrop.addEventListener('click', toggleOffcanvas);
+        } else {
+            // Remover el backdrop
+            const backdrop = document.getElementById('offcanvas-backdrop');
+            if (backdrop) {
+                backdrop.remove();
+            }
+            // Habilitar el scroll del body
+            body.style.overflow = '';
+        }
+    }
+
+    // 3. Asignar eventos a los botones
+    togglerButton.addEventListener('click', toggleOffcanvas);
+    closerButton.addEventListener('click', toggleOffcanvas);
+</script>
 </body>
 </html>

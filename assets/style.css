@@ -64,10 +64,33 @@ body {
     transition: transform 0.3s ease-out;
 }
 
-/* 3. El Efecto HOVER */
 .nav-link:hover::after {
     /* Al hacer hover, cambiamos la escala a 1 (100% de su ancho original) */
     transform: scaleX(1); 
+}
+
+/*Offcanvas*/
+.offcanvas {
+    background-color: var(--jet-black);
+
+}
+.offcanvas-title {
+    color: var(--white);
+}
+.offcanvas-body{
+    margin-bottom: 15px;
+}
+.nav-link-offcanvas {
+    color: var(--white);
+    font-size: 20px;
+    text-decoration: none;
+}
+#offcanvas-sigueme {
+    color: var(--white);
+    margin-bottom: 10px;
+}
+#offcanvas-closer {
+    filter: invert(100%);
 }
 /* Main */
 .main {
@@ -123,8 +146,3 @@ body {
     margin-top: 20px;
 }
 
-@media (max-width: 768px) {
-    .navbar {
-        display: flex;
-    }
-}
