@@ -16,6 +16,9 @@ body {
     background-color: var(--lavender);
 }
 /* NavBar */
+nav {
+    position: fixed;
+}
 .navbar-toggler {
     filter: invert(100%);
 }
@@ -94,41 +97,49 @@ body {
 }
 
 /* Main */
-.main {
+.caja {
     text-align: left;
     background-color: var(--teal);
     color: var(--white);
     border-radius: 10px;
     padding: 20px;
+}
+.main {
+    margin-top: 80px;
 }
 .card {
     margin: 10px;
 }
 .container {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    margin-bottom: 50px;
+
 }
-/*Curriculum*/
-.container-cv {
-    padding-top: 18px;
-    padding-bottom: 10px;
-    border-bottom: 2px solid var(--white);
+
+.detalle {
+    background-color: var(--pale-sky);
+    color: var(--jet-black);
+    border-radius: 10px;
+    padding: 10px;
 }
-.container-cv:last-child {
-    border-bottom: 0;
-    padding-bottom: 0px;
+.profile-picture-container {
+    text-align: center;
+}
+.profile-picture {
+    border-radius: 10px;
+    width: 100%;
+    height: 510px;
+    object-fit: cover;
+}   
+.titulo {
+    color: var(--jet-black);
+    font-weight: bold;
 }
 
 /*Proyectos*/
 .proyectos {
     text-align: left;
-    background-color: var(--teal);
     color: var(--white);
-    border-radius: 10px;
     padding: 20px;
-}
-.proyectos h1 {
-    margin-bottom: 20px;
 }
 
 .card:hover {
