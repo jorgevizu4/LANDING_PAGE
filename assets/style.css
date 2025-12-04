@@ -116,10 +116,10 @@ body {
     border-radius: 10px;
     padding: 10px;
 }
-#foto {
+#foto-container {
     height: auto;
 } 
-img {
+#foto {
     border-radius: 10px;
     width: 100%;
     height: 100%;
@@ -150,7 +150,7 @@ img {
 }
 
 @media screen and (max-width: 1030px) {
-    #foto {
+    #foto-container {
         display: none;
     }
     #proyectos {
