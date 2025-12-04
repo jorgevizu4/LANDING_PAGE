@@ -16,9 +16,6 @@ body {
     background-color: var(--lavender);
 }
 /* NavBar */
-nav {
-    position: fixed;
-}
 .navbar-toggler {
     filter: invert(100%);
 }
@@ -104,36 +101,30 @@ nav {
     border-radius: 10px;
     padding: 20px;
 }
-.main {
-    margin-top: 80px;
-}
-.card {
-    margin: 10px;
-}
+
 .container {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
 }
-
+.titulo {
+    color: var(--jet-black);
+    font-weight: bold;
+}
 .detalle {
     background-color: var(--pale-sky);
     color: var(--jet-black);
     border-radius: 10px;
     padding: 10px;
 }
-.profile-picture-container {
-    text-align: center;
-}
-.profile-picture {
+#foto {
+    height: auto;
+} 
+img {
     border-radius: 10px;
     width: 100%;
-    height: 510px;
+    height: 100%;
     object-fit: cover;
-}   
-.titulo {
-    color: var(--jet-black);
-    font-weight: bold;
-}
+}  
 
 /*Proyectos*/
 .proyectos {
@@ -141,16 +132,15 @@ nav {
     color: var(--white);
     padding: 20px;
 }
-
+.card {
+    margin: 10px;
+}
 .card:hover {
     transform: scale(1.05);
     transition: transform 0.3s;
 }
 
 /*Contacto*/
-.col {
-    color: var(--white);
-}
 
 /*Footer*/
 .footer {
@@ -159,3 +149,11 @@ nav {
     margin-top: 20px;
 }
 
+@media screen and (max-width: 1030px) {
+    #foto {
+        display: none;
+    }
+    #proyectos {
+        width: 100%;
+    }
+}
